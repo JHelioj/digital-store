@@ -2,12 +2,13 @@ import estilo from './styles.module.scss'
 import Filtrar from '../../components/MenuFiltrar'
 import Produtos from '../../components/ProdutoCard'
 import Ordenar from '../../components/MenuOrdenar'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 export default function ProdutoHome() {
+    const [produtos, setProdutos] = useState([])
 
-    useEffect(()=>{
+    useEffect(() => {
         console.log(1)
-        fetch('https://projeto-backend-te6l.onrender.com/produtos').then(res=>res.json()).then(data => console.log(data))
+        fetch('https://backend-dc.onrender.com/produtos').then(res => res.json()).then(data => setProdutos(data))
     }, [])
     return (
         <div className={estilo.teste}>
@@ -20,11 +21,8 @@ export default function ProdutoHome() {
                         <Filtrar />
                     </div>
                     <div className={estilo.produtos}>
-                        1
                         <Produtos />
-                        2
                         <Produtos />
-                        3
                         <Produtos />
                         <Produtos />
                         <Produtos />
