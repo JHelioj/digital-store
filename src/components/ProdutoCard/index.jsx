@@ -8,16 +8,16 @@ export default function ProdutoHome(props) {
             <Link to={"/produtos/" + props.id}>
                 <div className={estilo.Produto}>
                     <div className={estilo.caixaImagem}>
-                        <img src={tenis} alt="" className={estilo.ImagemProduto} />
+                        {props.img}
                     </div>
                     <div className={estilo.TipoProduto}>
-                        Tenis
+                        {props.categoria}
                     </div>
                     <div className={estilo.NomeProduto}>
-                        K-Swiss V8 - Masculino
+                        {props.descricao}
                     </div>
                     <div className={estilo.PrecoProduto}>
-                        $100
+                        {props.valor}
                     </div>
                 </div>
             </Link>
